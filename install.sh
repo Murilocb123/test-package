@@ -8,6 +8,7 @@ _ARTIFACT_ID="${ARTIFACT_ID:-birt-runtime-libs}"
 _VERSION="${VERSION:-1.0.0}"
 _PACKAGING="${PACKAGING:-pom}"
 _LIBS_GZ_PATH="${LIBS_GZ_PATH:-./lib.tar.gz}"
+_REPOSITORY_PATH="${REPOSITORY_PATH:-./repo}"
 
 mkdir -p "$_DEPENDENCIES_PATH"
 
@@ -52,7 +53,7 @@ for file in $_DEPENDENCIES_PATH/*.jar; do
     echo -e "        </dependency>" >>$_POM_PATH
     echo "artifactid: $artifactId"
     echo "version: $version"
-    #mvn install:install-file -Dfile=$file -DlocalRepositoryPath=./repo -DgroupId=org.eclipse.birt.runtime -DartifactId=$artifactId -Dversion=$version -Dpackaging=jar
+    #mvn install:install-file -Dfile=$file -DlocalRepositoryPath=$_REPOSITORY_PATH -DgroupId=org.eclipse.birt.runtime -DartifactId=$artifactId -Dversion=$version -Dpackaging=jar
     echo "---------------------------------------------------"
 done
 
