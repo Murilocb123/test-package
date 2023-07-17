@@ -1,7 +1,7 @@
 before_install:
   - bash ./install.sh
-install:
-  - mvn install -Dfile=$POM_PATH
+#install:
+#  - mvn install -Dfile=$POM_PATH
 env: 
   POM_PATH: "./pom.xml"
   VERSION: "birt-4.13.0"
