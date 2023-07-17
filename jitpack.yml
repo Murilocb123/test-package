@@ -1,4 +1,5 @@
-before_install:
+# before_install:
+install:
   - bash ./install.sh
 #install:
 #  - mvn install -Dfile=$POM_PATH
