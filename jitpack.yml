@@ -3,5 +3,6 @@ before_install:
 install:
   - mvn install -Dfile=$_POM_PATH
 env: 
-  _POM_PATH: "./pom.xml"
+  POM_PATH: "./pom.xml"
+  VERSION: birt-4.13.0
   
