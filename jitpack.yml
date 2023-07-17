@@ -1,6 +1,7 @@
-before_install:
-  - bash ./install.sh
+#before_install:
+# 
 install:
+ - bash ./install.sh
  - mvn install -Dfile=$POM_PATH
 env: 
   POM_PATH: "./pom.xml"
