@@ -53,7 +53,7 @@ for file in $_DEPENDENCIES_PATH/*.jar; do
     echo -e "        </dependency>" >>$_POM_PATH
     echo "artifactid: $artifactId"
     echo "version: $version"
-    #mvn install:install-file -Dfile=$file -DlocalRepositoryPath=$_REPOSITORY_PATH -DgroupId=org.eclipse.birt.runtime -DartifactId=$artifactId -Dversion=$version -Dpackaging=jar
+    mvn install:install-file -Dfile=$file -DlocalRepositoryPath=$_REPOSITORY_PATH -DgroupId=org.eclipse.birt.runtime -DartifactId=$artifactId -Dversion=$version -Dpackaging=jar
     echo "---------------------------------------------------"
 done
 
