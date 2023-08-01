@@ -1,7 +1,7 @@
 ## Variaveis configuraveis
 
 _DEPENDENCIES_PATH="${DEPENDENCIES_PATH:-./lib/}"
-_POM_PATH="${POM_PATH:-./pom.xml}"
+_POM_PATH="${POM_PATH:-./final-project/pom.xml}"
 _MODEL_VERSION="${MODEL_VERSION:-4.0.0}"
 _GROUP_ID="${GROUP_ID:-org.eclipse.birt.runtime}"
 _ARTIFACT_ID="${ARTIFACT_ID:-birt-runtime-libs}"
