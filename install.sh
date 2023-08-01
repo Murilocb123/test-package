@@ -26,15 +26,15 @@ echo -e "Initializing repo with:
 - Version $_VERSION 
 - Packaging $_PACKAGING"
 
-echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" >$_POM_PATH
-echo -e "<project xmlns=\"http://maven.apache.org/POM/4.0.0z\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">" >>$_POM_PATH
-echo -e "    <modelVersion>$_MODEL_VERSION</modelVersion>" >>$_POM_PATH
-echo -e "    <groupId>$_GROUP_ID</groupId>" >>$_POM_PATH
-echo -e "    <artifactId>$_ARTIFACT_ID</artifactId>" >>$_POM_PATH
-echo -e "    <version>$_VERSION</version>" >>$_POM_PATH
-echo -e "    <packaging>$_PACKAGING</packaging>" >>$_POM_PATH
+# echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" >$_POM_PATH
+# echo -e "<project xmlns=\"http://maven.apache.org/POM/4.0.0z\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">" >>$_POM_PATH
+# echo -e "    <modelVersion>$_MODEL_VERSION</modelVersion>" >>$_POM_PATH
+# echo -e "    <groupId>$_GROUP_ID</groupId>" >>$_POM_PATH
+# echo -e "    <artifactId>$_ARTIFACT_ID</artifactId>" >>$_POM_PATH
+# echo -e "    <version>$_VERSION</version>" >>$_POM_PATH
+# echo -e "    <packaging>$_PACKAGING</packaging>" >>$_POM_PATH
 echo "Installing dependencies from $_DEPENDENCIES_PATH"
-echo -e "    <dependencies>" >>$_POM_PATH
+# echo -e "    <dependencies>" >>$_POM_PATH
 
 for file in $_DEPENDENCIES_PATH/*.jar; do
     echo "---------------------------------------------------"
@@ -46,16 +46,16 @@ for file in $_DEPENDENCIES_PATH/*.jar; do
     artifactId=$(echo $file | grep -oP '[^/]*.(?=_)')
     [[ -z $artifactId ]] && artifactId=$(echo $(echo $file | grep -oP '[^/]*.(?=.jar)')) || echo $artifactId
 
-    echo -e "        <dependency>" >>$_POM_PATH
-    echo -e "           <groupId>org.eclipse.birt.runtime</groupId>" >>$_POM_PATH
-    echo -e "            <artifactId>$artifactId</artifactId>" >>$_POM_PATH
-    echo -e "            <version>$version</version>" >>$_POM_PATH
-    echo -e "        </dependency>" >>$_POM_PATH
+    # echo -e "        <dependency>" >>$_POM_PATH
+    # echo -e "           <groupId>org.eclipse.birt.runtime</groupId>" >>$_POM_PATH
+    # echo -e "            <artifactId>$artifactId</artifactId>" >>$_POM_PATH
+    # echo -e "            <version>$version</version>" >>$_POM_PATH
+    # echo -e "        </dependency>" >>$_POM_PATH
     echo "artifactid: $artifactId"
     echo "version: $version"
     mvn install:install-file -Dfile=$file -DlocalRepositoryPath=$_REPOSITORY_PATH -DgroupId=org.eclipse.birt.runtime -DartifactId=$artifactId -Dversion=$version -Dpackaging=jar
     echo "---------------------------------------------------"
 done
 
-echo -e "    </dependencies>" >>$_POM_PATH
-echo -e "</project>" >>$_POM_PATH
+# echo -e "    </dependencies>" >>$_POM_PATH
+# echo -e "</project>" >>$_POM_PATH
