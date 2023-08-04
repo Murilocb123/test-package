@@ -5,5 +5,8 @@ install:
  - bash ./install.sh
 env: 
 #  POM_PATH: "./pom.xml"
-  VERSION: "birt-4.13.0"
+  VERSION: "v4.13.0"
+  GROUP: "org.eclipse.birt.runtime"
+  ARTIFACT: "birt-libs"
+  
   
