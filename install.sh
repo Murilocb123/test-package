@@ -14,7 +14,7 @@ mkdir -p "$_DEPENDENCIES_PATH"
 
 tar -xzf "$_LIBS_GZ_PATH"
 
-touch "$_POM_PATH"
+#touch "$_POM_PATH"
 
 #Limpa o arquivo
 echo "" > $_POM_PATH
