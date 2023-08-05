@@ -1,2 +1,6 @@
 install:
 - bash ./install.sh
+env:
+  VERSION: "v4.13.0"
+  GROUP: "org.eclipse.birt.runtime"
+  ARTIFACT: "birt-libs"
