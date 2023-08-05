@@ -1,12 +1,7 @@
-# before_install:
-#  - bash ./install.sh
-install: 
-# - mvn install -Dfile=$POM_PATH
- - bash ./install.sh
-env: 
-#  POM_PATH: "./pom.xml"
+install:
+- bash ./install.sh
+env:
   VERSION: "v4.13.0"
   GROUP: "org.eclipse.birt.runtime"
   ARTIFACT: "birt-libs"
-  
   
