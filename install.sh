@@ -17,7 +17,7 @@ tar -xzf "$_LIBS_GZ_PATH"
 #touch "$_POM_PATH"
 
 #Limpa o arquivo
-echo "" > $_POM_PATH
+#echo "" > $_POM_PATH
 
 echo -e "Initializing repo with:
 - Model version: $_MODEL_VERSION 
